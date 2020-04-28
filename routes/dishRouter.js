@@ -47,10 +47,10 @@ dishRouter.route('/')
 dishRouter.route('/:dishId')
 .get((req,res,next)=> {
     Dishes.findById(req.params.dishId)
-    .then((dishes)=> {
+    .then((dish)=> {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
-        res.json(dishes);
+        res.json(dish);
     }, (err)=> next(err))
     .catch((err)=> next(err));
 })
